@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="javascript" type="text/javascript" src="editarea/edit_area_full.js"></script>
+<script language="javascript" type="text/javascript">
+editAreaLoader.init({
+	id : "code"		// textarea id
+	,syntax: "js"			// syntax to be uses for highgliting
+	,start_highlight: true		// to display with highlight mode on start-up
+});
+</script>
+
+    <style>
+      canvas{
+        background-image: url(bg.jpg);
+        background-size: cover;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      }
+      body{
+        background: #fff;
+      }
+      #instructions{
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        padding: 20px;
+      }
+      textarea{
+        width: 670px;
+
+      }
+      .exec{
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        width: 680px;
+        padding: 10px;
+      }
+      button{
+        box-shadow: none;
+        border: solid 1px rgb(39, 174, 96);
+        background: transparent;
+        color: rgb(39, 174, 96);
+        padding: 12px 15px;
+        cursor: pointer;
+        transition:all ease .5s
+      }
+      button:hover{
+        box-shadow: none;
+        border: solid 1px rgb(39, 174, 96);
+        background: rgb(39, 174, 96);
+        color: white;
+        padding: 12px 15px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div style="display: flex;width: 100%">
+      <canvas width="700" height="350" id="canvas"></canvas>
+      <div id="instructions" style="margin-left: 15px">
+        <div id="inst1">
+          <h1>Welcome to js Hero</h1>
+          <p>
+            Your goal is,always, to get our hero OUT of the Forest! <br>
+            Execute "<b>move()</b>" to see our hero move a step ahead
+            <br><br>
+
+            TIP: Use the browser console to check errors! (F12)
+          </p>
+        </div>
+        <div id="inst2" style="display: none">
+          <h1>Good Job</h1>
+          <p>
+            Using <b>move()</b> and a for loop make the hero go out of the box!<br>
+            <pre>
+              for(var i = 0; i < how_many_time; i++){
+                // code
+              }
+            </pre>
+            <i>Width of the Box is 70 times the step of our hero</i>
+          </p>
+        </div>
+        <div id="inst3"  style="display: none">
+          <h1>Be careful of walls</h1>
+          <p>
+            Our hero can avoid walls! <br>
+            Use <b>isAWallAhead(pos)</b> to check if there's a wall ahead in Position<br>
+            Use <b>jump()</b> .. Well to Jump <br><br>
+            <br>
+            <pre>
+              if(condition){
+                //Do something
+              }
+            </pre>
+            <br>
+            <br>
+            <i>Width of the Box is 70 times the step of our hero</i><br>
+            <i>Our Hero only jump once, use it carefully</i>
+          </p>
+        </div>
+        <div id="inst4" style="display: none">
+          <h1>Sometimes You can't jump THAT high</h1>
+          <p>
+            Sometime you need to break the WALL! <br>
+            Use <b>isAWallAhead(pos)</b> to check if there's a wall ahead in Position<br>
+            Use <b>breakWall(pos)</b> .. to break the wall <br>
+            But this walls are build very well, repeat the action of breaking until it's destroyed : <br>
+            Use <b>isDestroyed(pos)</b> to check that
+            <br>
+            <pre>
+              while(condition){
+                //code
+              }
+            </pre>
+            <br><br>
+            <i>Width of the Box is 70 times the step of our hero</i><br>
+            <i>Our Hero only jump once, use it carefully</i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="exec">
+      <textarea id="code" placeholder="Write code Here" cols="60" rows="4"></textarea><br>
+      <button onclick="tryCode()">Execute</button>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
